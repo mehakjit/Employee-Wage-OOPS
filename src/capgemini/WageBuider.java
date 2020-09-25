@@ -10,7 +10,6 @@ public class WageBuider {
 	}
 	public static void main(String[] args) {
 	System.out.println("Welcome to Employee Wage Computation Program ");
-	String status = WageBuider.attendence();
-	System.out.println(status);
+	System.out.println(attendence());
 	}
 }
