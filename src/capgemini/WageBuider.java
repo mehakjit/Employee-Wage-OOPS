@@ -52,22 +52,26 @@ public class WageBuider {
 			return 0;}
 		return 0;
 	}
-	public static int monthlyWage(int no_Of_Days) {
+	public static int Wage(int no_Of_Days,int max_no_of_hours) {
 		int totalWage = 0;
+		int hours=0;
 		int day = 0;
 		for(int i = 0;i<no_Of_Days;i++){
+			while (hours<max_no_of_hours && day<no_Of_Days) {
 			day += 1;
 			System.out.println("Employee Attendence of Day " + day +" is: "+ attendence() + ";   Employe Type: " 
-								+ employeeType(a) + ";   Employee Wage: " + empWage(a,b));
+								+ employeeType(a) + ";   Employee Wage: " + empWage(a,b) );
+			hours +=  (empWage(a,b)/20);
 			totalWage += empWage(a, b);
 			a=0;
 			b=0;
+			}
 		}
 		return totalWage;
 	}
 
 	public static void main(String[] args) {
 	System.out.println("Welcome to Employee Wage Computation Program ");
-	System.out.println(monthlyWage(20));
+	System.out.println(Wage(20,100));
 	}
 }
