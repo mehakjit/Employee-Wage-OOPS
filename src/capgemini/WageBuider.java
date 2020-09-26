@@ -12,10 +12,10 @@ public class WageBuider {
 		int check_attendence = (int)(Math.random()*2);
 		switch(check_attendence) {
 		case Present:
-			return "Employee is present";
+			return "Present";
 		case Abscent:
 			a=1;
-			return "Employee is absent";	
+			return "Abscent";	
 		}
 	return "dchusuygfuyws";
 	}
@@ -52,10 +52,22 @@ public class WageBuider {
 			return 0;}
 		return 0;
 	}
-
+	public static int monthlyWage(int no_Of_Days) {
+		int totalWage = 0;
+		int day = 0;
+		for(int i = 0;i<no_Of_Days;i++){
+			day += 1;
+			System.out.println("Employee Attendence of Day " + day +" is: "+ attendence() + ";   Employe Type: " 
+								+ employeeType(a) + ";   Employee Wage: " + empWage(a,b));
+			totalWage += empWage(a, b);
+			a=0;
+			b=0;
+		}
+		return totalWage;
+	}
 
 	public static void main(String[] args) {
 	System.out.println("Welcome to Employee Wage Computation Program ");
-	System.out.println("Employee Attendence: " + attendence() + ";   Employe Type: " + employeeType(a) + ";   Employee Wage: " + empWage(a,b));
+	System.out.println(monthlyWage(20));
 	}
 }
