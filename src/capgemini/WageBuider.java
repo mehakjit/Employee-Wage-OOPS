@@ -37,37 +37,36 @@ public class WageBuider {
 	}
 		return " ush";}
 
-	public static int empWage(int empStatus, int empType) {
+	public static int empWage(int empStatus, int empType ,int empWage) {
 		int hours = 8;
-		int wage = 20;
 		switch(empStatus) {
 		case PRESENT:
 			switch (empType) {
 			case Full_Time:
-				return hours*wage;
+				return hours*empWage;
 			case Half_Time:
-				return hours*wage/2;
+				return hours*empWage/2;
 		}
 		case Abscent:
 			return 0;}
 		return 0;
 	}
-	public int Wage(int no_Of_Days,int max_no_of_hours) {
+	public String Wage(String company,int no_Of_Days,int max_no_of_hours,int empWage) {
 		int totalWage = 0;
 		int hours=0;
 		int day = 0;
 		for(int i = 0;i<no_Of_Days;i++){
 			while (hours<max_no_of_hours && day<no_Of_Days) {
 			day += 1;
-			System.out.println("Employee Attendence of Day " + day +" is: "+ attendence() + ";   Employe Type: " 
-								+ employeeType(a) + ";   Employee Wage: " + empWage(a,b) );
-			hours +=  (empWage(a,b)/20);
-			totalWage += empWage(a, b);
+			System.out.println("Company: " + company + ";   Day: " + day +";   Attendence: "+ attendence() + ";   Employe Type: " 
+								+ employeeType(a) + ";   Employee Wage: " + empWage(a,b,empWage) );
+			hours +=  (empWage(a,b,empWage)/empWage);
+			totalWage += empWage(a, b,empWage);
 			a=0;
 			b=0;
 			}
 		}
-		return totalWage;
+		return "Total Wage: " + totalWage;
 	}
 
 
