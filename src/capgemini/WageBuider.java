@@ -1,7 +1,7 @@
 package capgemini;
 
 public class WageBuider {
-	public static final int Present = 0;
+	public static final int PRESENT = 0;
 	public static final int Abscent = 1;
 	public static final int Full_Time = 0;
 	public static final int Half_Time = 1;
@@ -11,7 +11,7 @@ public class WageBuider {
 	public static String attendence(){
 		int check_attendence = (int)(Math.random()*2);
 		switch(check_attendence) {
-		case Present:
+		case PRESENT:
 			return "Present";
 		case Abscent:
 			a=1;
@@ -22,7 +22,7 @@ public class WageBuider {
 
 	public static String employeeType(int empStatus) {
 		switch (empStatus) {
-		case Present:
+		case PRESENT:
 			int TypeOfEmployee = (int)(Math.random()*2);
 				switch (TypeOfEmployee) {
 				case Full_Time:
@@ -41,7 +41,7 @@ public class WageBuider {
 		int hours = 8;
 		int wage = 20;
 		switch(empStatus) {
-		case Present:
+		case PRESENT:
 			switch (empType) {
 			case Full_Time:
 				return hours*wage;
@@ -52,7 +52,7 @@ public class WageBuider {
 			return 0;}
 		return 0;
 	}
-	public static int Wage(int no_Of_Days,int max_no_of_hours) {
+	public int Wage(int no_Of_Days,int max_no_of_hours) {
 		int totalWage = 0;
 		int hours=0;
 		int day = 0;
@@ -70,8 +70,5 @@ public class WageBuider {
 		return totalWage;
 	}
 
-	public static void main(String[] args) {
-	System.out.println("Welcome to Employee Wage Computation Program ");
-	System.out.println(Wage(20,100));
+
 	}
-}
