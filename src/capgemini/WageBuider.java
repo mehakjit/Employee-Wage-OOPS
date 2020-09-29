@@ -15,8 +15,18 @@ public class WageBuider implements UI {
 			Company c = new  Company(company, empRatePerHour, maxDays, maxHours);
 			list.add(c);
 			c.setTotalWage(Wage(company, maxHours , maxDays, empRatePerHour));
-			System.out.println(c);
-		}
+			}
+			
+		public int getTotalWage(String Company) {
+			  //  System.out.println("For Loop");
+			    for (int counter = 0; counter < list.size(); counter++) { 		      
+			        if (list.get(counter).company.equals(Company)) {
+			        	System.out.println(list.get(counter).company);
+			        	return list.get(counter).getTotalWage();
+			        }
+			    
+			    }   return -1;
+			}
 		public String attendence(){
 		int check_attendence = (int)(Math.random()*2);
 		switch(check_attendence) {
@@ -26,7 +36,6 @@ public class WageBuider implements UI {
 			tempStaus=1;
 			return "Abscent";	
 		}
-	
 	}
 
 	public String employeeType(int empStatus) {
@@ -65,8 +74,6 @@ public class WageBuider implements UI {
 		for(int i = 0;i<no_Of_Days;i++){
 			while (hours<max_no_of_hours && day<no_Of_Days) {
 			day += 1;
-			System.out.println("Company: " + company + ";   Day: " + day +";   Attendence: "+ attendence() + ";   Employe Type: " 
-								+ employeeType(tempStaus) + ";   Employee Wage: " + empWage(tempStaus,tempType,empWage) );
 			hours +=  (empWage(tempStaus,tempType,empWage)/empWage);
 			totalWage += empWage(tempStaus, tempType,empWage);
 			tempStaus=0;

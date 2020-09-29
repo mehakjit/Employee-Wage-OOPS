@@ -20,7 +20,7 @@ public class Company {
 		this.empRatePerHour = empRatePerHour;
 		this.maxDays = maxDays;
 		this.maxHours = maxHours;
-
+	
 	}
 	@Override
 	public String toString() {
