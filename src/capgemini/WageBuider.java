@@ -1,5 +1,7 @@
 package capgemini;
 
+import java.util.ArrayList;
+
 public class WageBuider {
 	public static final int PRESENT = 0;
 	public static final int Full_Time = 0;
@@ -7,7 +9,15 @@ public class WageBuider {
 	public static int tempStaus = 0;
 	public static int tempType = 0;
 
-	public String attendence(){
+		public ArrayList<Company> list = new ArrayList<Company>(); 
+		
+		public void addCompany(String company, int empRatePerHour, int maxDays, int maxHours) {
+			Company c = new  Company(company, empRatePerHour, maxDays, maxHours);
+			list.add(c);
+			c.setTotalWage(Wage(company, maxHours , maxDays, empRatePerHour));
+			System.out.println(c);
+		}
+		public String attendence(){
 		int check_attendence = (int)(Math.random()*2);
 		switch(check_attendence) {
 		case PRESENT:
@@ -16,6 +26,7 @@ public class WageBuider {
 			tempStaus=1;
 			return "Abscent";	
 		}
+	
 	}
 
 	public String employeeType(int empStatus) {
@@ -47,7 +58,7 @@ public class WageBuider {
 		default :
 			return 0;}
 	}
-	public String Wage(String company,int no_Of_Days,int max_no_of_hours,int empWage) {
+	public int Wage(String company,int no_Of_Days,int max_no_of_hours,int empWage) {
 		int totalWage = 0;
 		int hours=0;
 		int day = 0;
@@ -62,6 +73,6 @@ public class WageBuider {
 			tempType=0;
 			}
 		}
-		return "Total Wage: " + totalWage;
+		return totalWage;
 	}
 }
