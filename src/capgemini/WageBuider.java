@@ -2,7 +2,7 @@ package capgemini;
 
 import java.util.ArrayList;
 
-public class WageBuider {
+public class WageBuider implements UI {
 	public static final int PRESENT = 0;
 	public static final int Full_Time = 0;
 	public static final int Half_Time = 1;
