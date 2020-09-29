@@ -8,5 +8,5 @@ public class Main {
 		j.addCompany("Capg", 50, 100, 20);
 		j.addCompany("Alan", 20, 100, 20);
 		
-}
+	}
 }
